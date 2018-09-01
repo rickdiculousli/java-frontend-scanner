@@ -6,6 +6,11 @@ import wci.frontend.java.*;
 import static wci.frontend.java.JavaTokenType.*;
 import static wci.frontend.java.JavaErrorCode.*;
 
-public class JavaNumberToken {
+public class JavaNumberToken extends JavaToken{
+
+	public JavaNumberToken(Source source) throws Exception {
+		super(source);
+		// TODO Auto-generated constructor stub
+	}
 
 }
