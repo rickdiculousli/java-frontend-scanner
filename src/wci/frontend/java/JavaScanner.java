@@ -35,11 +35,10 @@ public class JavaScanner extends Scanner{
         else if (Character.isDigit(currentChar)) {
             token = new JavaNumberToken(source);
         }
-        else if (currentChar == '\'') {
+        else if (currentChar == '\'' || currentChar == '\"') {
             token = new JavaStringToken(source);
         }
-        // TODO: Wait for TokenType and ErrorCode to be implemented
-        /*****************
+
         else if (JavaTokenType.SPECIAL_SYMBOLS
                  .containsKey(Character.toString(currentChar))) {
             token = new JavaSpecialSymbolToken(source);
@@ -49,7 +48,6 @@ public class JavaScanner extends Scanner{
                                          Character.toString(currentChar));
             nextChar();  // consume character
         }
-        *******************/
 
         return token;
 	}

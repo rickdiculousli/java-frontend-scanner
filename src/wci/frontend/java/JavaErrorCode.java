@@ -1,7 +1,7 @@
 package wci.frontend.java;
 
 
-
+//TODO: REMOVE ALL ERROR CODES RELEVANT TO PASCAL ONLY.
 public enum JavaErrorCode
 {
     ALREADY_FORWARDED("Already specified in FORWARD"),
