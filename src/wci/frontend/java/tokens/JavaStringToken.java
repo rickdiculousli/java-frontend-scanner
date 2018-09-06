@@ -68,10 +68,18 @@ public class JavaStringToken extends JavaToken{
 	private void extractString(StringBuilder textBuffer, StringBuilder valueBuffer) throws Exception {
 		char currentChar = nextChar();
 		textBuffer.append('\"');
-		
+		String s = "\"";
 		do {
 			//TODO:Still replace whitespace or not like pascal?
-			if((currentChar != '\"') && currentChar != EOF) {
+			if((currentChar == '\\') && (peekChar() == '\"')) {
+				textBuffer.append(currentChar);
+	             valueBuffer.append(currentChar);
+	             currentChar = nextChar();
+	             textBuffer.append(currentChar);
+	             valueBuffer.append(currentChar);
+	             currentChar = nextChar();  // consume escaped characters (includes double quote)
+			}
+			else if((currentChar != '\"') && (currentChar != EOF)) {
 				 textBuffer.append(currentChar);
 	             valueBuffer.append(currentChar);
 	             currentChar = nextChar();  // consume character
