@@ -1,0 +1,67 @@
+!SESSION 2018-09-01 20:57:35.015 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=9.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-09-01 20:59:01.649
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2018-09-01 21:00:14.541 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=9.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-09-01 21:01:50.105
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-01 21:06:40.328
+!MESSAGE No repository found at https://www.scala-lang.org/download/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-01 21:06:54.817
+!MESSAGE No repository found at http://scala-ide.org/download/sdk.html.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-01 21:06:55.798
+!MESSAGE No repository found at http://downloads.typesafe.com/scalaide-pack/4.7.0-vfinal-oxygen-212-20170929/scala-SDK-4.7.0-vfinal-2.12-macosx.cocoa.x86_64.zip.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-01 21:06:56.121
+!MESSAGE No repository found at jar:file:/Users/acw154/Downloads/scala-SDK-4.7.0-vfinal-2.12-macosx.cocoa.x86_64.zip!/.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-09-01 21:09:11.598
+!MESSAGE 
+!SESSION 2018-09-03 15:05:25.951 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=9.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-09-03 15:05:39.640
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2018-09-04 10:12:26.073 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=9.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/acw154/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-09-04 10:12:40.179
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-04 13:49:04.798
+!MESSAGE No repository found at https://www.scala-lang.org/download/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-04 13:49:17.978
+!MESSAGE No repository found at http://scala-ide.org/download/sdk.html.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-04 13:49:18.950
+!MESSAGE No repository found at http://downloads.typesafe.com/scalaide-pack/4.7.0-vfinal-oxygen-212-20170929/scala-SDK-4.7.0-vfinal-2.12-macosx.cocoa.x86_64.zip.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-09-04 13:49:19.309
+!MESSAGE No repository found at jar:file:/Users/acw154/Downloads/scala-SDK-4.7.0-vfinal-2.12-macosx.cocoa.x86_64.zip!/.
