@@ -54,7 +54,7 @@ public class JavaStringToken extends JavaToken{
             nextChar();  // consume final quote
             textBuffer.append('\'');
 
-            type = CHARACTER;
+            type = CHAR;
             value = valueBuffer.toString();
         }
         else {
