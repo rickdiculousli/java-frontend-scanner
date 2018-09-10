@@ -6,6 +6,7 @@ import wci.frontend.java.*;
 
 import static wci.frontend.java.JavaTokenType.*;
 import static wci.frontend.java.JavaErrorCode.*;
+import static wci.frontend.Source.EOF;
 
 public class JavaSpecialSymbolToken extends JavaToken
 {
@@ -60,6 +61,7 @@ public class JavaSpecialSymbolToken extends JavaToken
                     nextChar();  // consume '='
                     
                 }
+                break;
             }
                 // + or ++ or +=
             case '+': {
@@ -73,6 +75,7 @@ public class JavaSpecialSymbolToken extends JavaToken
                         text += currentChar;
                         nextChar(); //consume '+'
                 }
+                    break;
             }
             // - or -- or -=
             case '-': {
@@ -86,6 +89,7 @@ public class JavaSpecialSymbolToken extends JavaToken
                         text += currentChar;
                         nextChar(); //consume '+'
                     }
+                    break;
             }
 
             // < or << or <<=
@@ -98,7 +102,12 @@ public class JavaSpecialSymbolToken extends JavaToken
                 }
                 else if (currentChar == '<') {
                         text += currentChar;
-                        nextChar(); //consume '<'
+                        currentChar = nextChar(); //consume '<'
+                        if (currentChar == '=') {
+                        	text += currentChar;
+                        	nextChar();
+                        }
+                        break;
                 }
                 /**
                  else if (currentChar == '>') {
@@ -108,6 +117,7 @@ public class JavaSpecialSymbolToken extends JavaToken
 
                 break;
                 */
+                break;
             }
 
             // > or >= or >> or >>=
@@ -120,7 +130,11 @@ public class JavaSpecialSymbolToken extends JavaToken
                 }
                 else if (currentChar == '>') {
                         text += currentChar;
-                        nextChar(); //consume '>'
+                        currentChar = nextChar(); //consume '>'
+                        if (currentChar == '=') {
+                        	text += currentChar;
+                        	nextChar();
+                        }
                 }
 
                 break;
@@ -139,6 +153,8 @@ public class JavaSpecialSymbolToken extends JavaToken
                         text += currentChar;
                      nextChar(); //consume '|'
                     }
+                    break;
+                  
             }
             // * or *=
             case '*': {
@@ -152,6 +168,7 @@ public class JavaSpecialSymbolToken extends JavaToken
                         text += currentChar();
                         nextChar(); //consume '/'
                     }
+                    break;
             }
             // & or && or &=
             case '&': {
@@ -165,6 +182,7 @@ public class JavaSpecialSymbolToken extends JavaToken
                         text += currentChar();
                         nextChar(); //consume '='
                     }
+                    break;
             }
             // / or // or /= or /*
             case '/': {
@@ -182,7 +200,7 @@ public class JavaSpecialSymbolToken extends JavaToken
                         text += currentChar();
                         nextChar(); //consume '*'
                     }
-                    
+                    break;                    
             }
             default: {
                 nextChar();  // consume bad character
@@ -190,6 +208,16 @@ public class JavaSpecialSymbolToken extends JavaToken
                 value = INVALID_CHARACTER;
             }
         }
+        //if the character after symbol doesn't end ==> error
+        if(!Character.isWhitespace(currentChar())) {
+        	type = ERROR;
+            value = INVALID_CHARACTER;
+            while(!Character.isWhitespace(currentChar()) && currentChar != EOF) {
+            	text += currentChar();
+            	nextChar();
+            }
+        }
+        
 
         // Set the type if it wasn't an error.
         if (type == null) {

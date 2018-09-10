@@ -38,14 +38,27 @@ public class JavaStringToken extends JavaToken{
 			valueBuffer.append(currentChar);
 			currentChar = nextChar();
 		}
-		//Is escaped char? TODO: CHANGE ESCAPED CHARS VALUE INTO ACTUAL VALUE? /n => NEWLINE etc.
+		//Is escaped char?
 		else if (currentChar == '\\') {
 			textBuffer.append(currentChar);
-			valueBuffer.append(currentChar);
-			
 			currentChar = nextChar();
-			textBuffer.append(currentChar);
-			valueBuffer.append(currentChar);
+			
+			if(currentChar == '\'') {
+	            textBuffer.append(currentChar);
+	            valueBuffer.append('\'');  // consume escaped character
+			}
+			else if(currentChar == 't') {
+	            textBuffer.append(currentChar);
+	            valueBuffer.append('\t');
+			}
+			else if(currentChar == 'n') {
+	            textBuffer.append(currentChar);
+	            valueBuffer.append('\n');
+			}
+			else if(currentChar == '\\') {
+	            textBuffer.append(currentChar);
+	            valueBuffer.append('\\');
+			}
 			
 			currentChar = nextChar();
 		}
@@ -53,7 +66,7 @@ public class JavaStringToken extends JavaToken{
 		if (currentChar == '\'') {
             nextChar();  // consume final quote
             textBuffer.append('\'');
-
+            
             type = CHAR;
             value = valueBuffer.toString();
         }
@@ -68,16 +81,23 @@ public class JavaStringToken extends JavaToken{
 	private void extractString(StringBuilder textBuffer, StringBuilder valueBuffer) throws Exception {
 		char currentChar = nextChar();
 		textBuffer.append('\"');
-		String s = "\"";
 		do {
-			//TODO:Still replace whitespace or not like pascal?
-			if((currentChar == '\\') && (peekChar() == '\"')) {
+			if(currentChar == '\\') {
 				textBuffer.append(currentChar);
-	             valueBuffer.append(currentChar);
-	             currentChar = nextChar();
-	             textBuffer.append(currentChar);
-	             valueBuffer.append(currentChar);
-	             currentChar = nextChar();  // consume escaped characters (includes double quote)
+	            currentChar = nextChar();
+				if(currentChar == '\"') {
+		            textBuffer.append(currentChar);
+		            valueBuffer.append('\"');
+				}
+				else if(currentChar == 't') {
+		            textBuffer.append(currentChar);
+		            valueBuffer.append('\t');
+				}
+				else if(currentChar == 'n') {
+		            textBuffer.append(currentChar);
+		            valueBuffer.append('\n');
+				}
+				currentChar = nextChar(); 
 			}
 			else if((currentChar != '\"') && (currentChar != EOF)) {
 				 textBuffer.append(currentChar);
