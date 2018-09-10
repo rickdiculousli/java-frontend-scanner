@@ -4,7 +4,6 @@ import java.util.Hashtable;
 import java.util.HashSet;
 
 import wci.frontend.TokenType;
-import wci.frontend.pascal.PascalTokenType;
 
 public enum JavaTokenType implements TokenType{
 
