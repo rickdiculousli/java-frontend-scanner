@@ -1,5 +1,0 @@
-2018-09-01 20:59:14,905 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2018-09-01 21:02:08,046 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2018-09-01 21:09:11,594 [main] WARN  org.eclipse.jgit.util.FS - null
-2018-09-03 15:06:06,896 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
-2018-09-04 10:13:08,262 [Worker-10] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

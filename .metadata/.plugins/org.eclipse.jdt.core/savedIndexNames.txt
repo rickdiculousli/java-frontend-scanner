@@ -1,3 +1,0 @@
-INDEX VERSION 1.130+/Users/acw154/Desktop/Files/F18/CS153/Assignments/Assignment2/Assignment2Repo/java-frontend-scanner/.metadata/.plugins/org.eclipse.jdt.core
-3665656385.index
-1016042710.index
