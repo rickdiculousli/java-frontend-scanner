@@ -197,17 +197,6 @@ public class JavaSpecialSymbolToken extends JavaToken
 	                value = INVALID_CHARACTER;
             }
         }
-        //if the character after symbol isn't whitespace ==> error
-        if(!Character.isWhitespace(currentChar())) {
-        	type = ERROR;
-            value = INVALID_CHARACTER;
-            while(!Character.isWhitespace(currentChar()) && currentChar != EOF) {
-            	text += currentChar();
-            	nextChar();
-            }
-        }
-        
-
         // Set the type if it wasn't an error.
         if (type == null) {
             type = SPECIAL_SYMBOLS.get(text);
