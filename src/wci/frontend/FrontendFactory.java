@@ -27,7 +27,7 @@ public class FrontendFactory
                                       Source source)
         throws Exception
     {
-    	
+    	//Select Pascal
     	if(language.equalsIgnoreCase("Pascal"))
     	{
 	        if (type.equalsIgnoreCase("top-down"))
@@ -38,7 +38,9 @@ public class FrontendFactory
 	            throw new Exception("Parser factory: Invalid type '" +
 	                                type + "'");
 	        }
-    	} else if(language.equalsIgnoreCase("Java"))
+    	} 
+    	//Select Java
+    	else if(language.equalsIgnoreCase("Java"))
     	{
     		if (type.equalsIgnoreCase("top-down"))
 	        {
@@ -48,7 +50,9 @@ public class FrontendFactory
 	            throw new Exception("Parser factory: Invalid type '" +
 	                                type + "'");
 	        }
-    	}else if (!language.equalsIgnoreCase("Pascal")) {
+    	}
+    	//Error
+    	else if (!language.equalsIgnoreCase("Pascal")) {
             throw new Exception("Parser factory: Invalid language '" +
                     language + "'");
     	}

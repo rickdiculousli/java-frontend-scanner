@@ -51,31 +51,28 @@ public class JavaSpecialSymbolToken extends JavaToken
                 // = or ==
             case '=':
                 // ! or !=
-            case '!':
-                //
-                {
-                    currentChar = nextChar();  // consume '%';
-
-                if (currentChar == '=') {
-                    text += currentChar;
-                    nextChar();  // consume '='
-                    
-                }
-                break;
+            case '!':{
+	                currentChar = nextChar();  // consume '%';
+	
+	                if (currentChar == '=') {
+	                    text += currentChar;
+	                    nextChar();  // consume '='
+	                }
+	                break;
             }
                 // + or ++ or +=
             case '+': {
-                    currentChar = nextChar(); //consume '+'
-                    
-                    if (currentChar == '=') {
-                    text += currentChar;
-                    nextChar();  // consume '='
-                }
-                else if (currentChar == '+') {
-                        text += currentChar;
-                        nextChar(); //consume '+'
-                }
-                    break;
+	                currentChar = nextChar(); //consume '+'
+	                
+	                if (currentChar == '=') {
+		                text += currentChar;
+		                nextChar();  // consume '='
+	                }
+	                else if (currentChar == '+') {
+	                    text += currentChar;
+	                    nextChar(); //consume '+'
+	                }
+	                break;
             }
             // - or -- or -=
             case '-': {
@@ -94,50 +91,42 @@ public class JavaSpecialSymbolToken extends JavaToken
 
             // < or << or <<=
             case '<': {
-                currentChar = nextChar();  // consume '<';
-
-                if (currentChar == '=') {
-                    text += currentChar;
-                    nextChar();  // consume '='
-                }
-                else if (currentChar == '<') {
-                        text += currentChar;
-                        currentChar = nextChar(); //consume '<'
-                        if (currentChar == '=') {
-                        	text += currentChar;
-                        	nextChar();
-                        }
-                        break;
-                }
-                /**
-                 else if (currentChar == '>') {
-                    text += currentChar;
-                    nextChar();  // consume '>'
-                }
-
-                break;
-                */
-                break;
+	                currentChar = nextChar();  // consume '<';
+	
+	                if (currentChar == '=') {
+	                    text += currentChar;
+	                    nextChar();  // consume '='
+	                }
+	                else if (currentChar == '<') {
+	                        text += currentChar;
+	                        currentChar = nextChar(); //consume '<'
+	                        if (currentChar == '=') {
+	                        	text += currentChar;
+	                        	nextChar();
+	                        }
+	                        break;
+	                }
+	                break;
             }
 
             // > or >= or >> or >>=
             case '>': {
-                currentChar = nextChar();  // consume '>';
+	                currentChar = nextChar();  // consume '>';
+	
+	                if (currentChar == '=') {
+	                        text += currentChar;
+	                    nextChar();  // consume '='
+	                }
+	                else if (currentChar == '>') {
+	                        text += currentChar;
+	                        currentChar = nextChar(); //consume '>'
+	                        if (currentChar == '=') {
+	                        	text += currentChar;
+	                        	nextChar();
+	                        }
+	                }
 
-                if (currentChar == '=') {
-                        text += currentChar;
-                    nextChar();  // consume '='
-                }
-                else if (currentChar == '>') {
-                        text += currentChar;
-                        currentChar = nextChar(); //consume '>'
-                        if (currentChar == '=') {
-                        	text += currentChar;
-                        	nextChar();
-                        }
-                }
-
-                break;
+	                break;
             }
 
             
@@ -203,12 +192,12 @@ public class JavaSpecialSymbolToken extends JavaToken
                     break;                    
             }
             default: {
-                nextChar();  // consume bad character
-                type = ERROR;
-                value = INVALID_CHARACTER;
+	                nextChar();  // consume bad character
+	                type = ERROR;
+	                value = INVALID_CHARACTER;
             }
         }
-        //if the character after symbol doesn't end ==> error
+        //if the character after symbol isn't whitespace ==> error
         if(!Character.isWhitespace(currentChar())) {
         	type = ERROR;
             value = INVALID_CHARACTER;

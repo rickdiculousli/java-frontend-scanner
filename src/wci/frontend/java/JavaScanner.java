@@ -83,7 +83,7 @@ public class JavaScanner extends Scanner{
 						}
 					} while (currentChar != EOF);
 					if(end) {
-						currentChar = nextChar(); // consumes '*'
+						nextChar(); // consumes '*'
 						currentChar = nextChar(); // consumes '/'
 					}
 				}

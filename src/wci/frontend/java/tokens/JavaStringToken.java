@@ -82,6 +82,7 @@ public class JavaStringToken extends JavaToken{
 		char currentChar = nextChar();
 		textBuffer.append('\"');
 		do {
+			//escaped string?
 			if(currentChar == '\\') {
 				textBuffer.append(currentChar);
 	            currentChar = nextChar();
@@ -99,6 +100,7 @@ public class JavaStringToken extends JavaToken{
 				}
 				currentChar = nextChar(); 
 			}
+			//normal string?
 			else if((currentChar != '\"') && (currentChar != EOF)) {
 				 textBuffer.append(currentChar);
 	             valueBuffer.append(currentChar);
